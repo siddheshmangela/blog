@@ -1,13 +1,17 @@
 ---
+import { Picture } from '@astrojs/image/components';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
+const images = await Astro.glob('../images/**/thumbnail.jpg');
 const posts = (await Astro.glob('./*.{md,mdx}')).sort(
   (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-);
+).map(a => Object.assign({}, a, {id: a.url.substring(1)}));
+
+
 ---
 
 <!DOCTYPE html>
@@ -48,10 +52,15 @@ const posts = (await Astro.glob('./*.{md,mdx}')).sort(
                   })}
                 </time>
                 <a href={post.url}>{post.frontmatter.title}</a>
+                <img src={`blog-images/${post.id}/thumbnail.jpg`}/>
               </li>
             ))
           }
         </ul>
+
+        <img src={images[0].default.src} />
+
+        <Picture src={images[0].default.src} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="My local image" aspectRatio="1:1" />
       </section>
     </main>
     <Footer />
