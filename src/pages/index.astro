@@ -7,38 +7,54 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const images = await Astro.glob('../images/**/thumbnail.jpg');
-const posts = (await Astro.glob('./*.{md,mdx}')).sort(
-  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-).map(a => Object.assign({}, a, {id: a.url.substring(1)}));
-
-
+const posts = (await Astro.glob('./*.{md,mdx}'))
+  .sort(
+    (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+  )
+  .map((a) => Object.assign({}, a, { id: a.url.substring(1) }));
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
+    <style lang="scss">
       ul {
         list-style-type: none;
         padding: unset;
+
+        li {
+          display: flex;
+        }
       }
-      ul li {
-        display: flex;
-      }
-      ul li time {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #888;
-      }
-      ul li a:visited {
-        color: #8e32dc;
+
+      main {
+        max-width: 1050px;
+        padding: 16px;
+        margin: 0 auto;
+        padding-top: 52px;
+
+        h1 {
+          text-align: center;
+          font-size: 2rem;
+        }
+
+        h2 {
+          text-align: center;
+        }
       }
     </style>
   </head>
   <body>
     <Header />
     <main>
+      <section>
+        <h1>{SITE_TITLE}</h1>
+        <h2>
+          Here is my blog filled with travel stories and experiences.
+          <br />With the sprinkling of tips and tricks here and there.
+        </h2>
+      </section>
       <section>
         <ul>
           {
@@ -51,16 +67,21 @@ const posts = (await Astro.glob('./*.{md,mdx}')).sort(
                     day: 'numeric',
                   })}
                 </time>
-                <a href={post.url}>{post.frontmatter.title}</a>
-                <img src={`blog-images/${post.id}/thumbnail.jpg`}/>
+                : <a href={post.url}>{post.frontmatter.title}</a>
               </li>
             ))
           }
         </ul>
 
-        <img src={images[0].default.src} />
-
-        <Picture src={images[0].default.src} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="My local image" aspectRatio="1:1" />
+        <!-- <img src={images[0].default.src} /> -->
+        <!--
+        <Picture
+          src={images[0].default.src}
+          widths={[200, 400, 800]}
+          sizes="(max-width: 800px) 100vw, 800px"
+          alt="My local image"
+          aspectRatio="1:1"
+        /> -->
       </section>
     </main>
     <Footer />
