@@ -41,6 +41,8 @@ const {
 
         @media (min-width: 1100px) {
           max-width: 70ch;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
     </style>
@@ -50,16 +52,6 @@ const {
     <Header />
     <main>
       <article>
-        <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
-        <hr />
         <slot />
       </article>
     </main>

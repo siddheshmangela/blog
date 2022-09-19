@@ -1,13 +1,17 @@
 ---
 export interface Props {
   height?: string;
+  justifyContent?: 'flex-start' | 'flex-end' | 'center';
 }
 
-const { height = 'initial' } = Astro.props;
+const { height = 'initial', justifyContent = 'flex-start' } = Astro.props;
 ---
 
 <figure class="PostImage">
-  <div class="image--holder" style={`--image-height: ${height}`}>
+  <div
+    class="image--holder"
+    style={`--image-height: ${height}; justify-content: ${justifyContent}`}
+  >
     <slot />
   </div>
 
@@ -38,11 +42,17 @@ const { height = 'initial' } = Astro.props;
     }
 
     figcaption {
+      margin-bottom: 10px;
       &:empty {
         display: none;
+        margin-bottom: 0;
       }
 
-      font-style: italic;
+      text-align: center;
+
+      :global(p) {
+        margin: 0;
+      }
     }
   }
 </style>
