@@ -1,0 +1,48 @@
+---
+export interface Props {
+  height?: string;
+}
+
+const { height = 'initial' } = Astro.props;
+---
+
+<figure class="PostImage">
+  <div class="image--holder" style={`--image-height: ${height}`}>
+    <slot />
+  </div>
+
+  <figcaption><slot name="caption" /></figcaption>
+</figure>
+
+<style lang="scss">
+  .PostImage {
+    margin: 0;
+    padding: 0;
+
+    .image--holder {
+      @media (min-width: 1100px) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      :global(.ImagePro) {
+        margin-bottom: 10px;
+        @media (min-width: 1100px) {
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    figcaption {
+      &:empty {
+        display: none;
+      }
+
+      font-style: italic;
+    }
+  }
+</style>

@@ -6,4 +6,26 @@ pubDate: 'Jul 08 2022'
 heroImage: '/placeholder-hero.jpg'
 ---
 
+import PostImage from '../components/PostImage.astro';
+import ImagePro from '../components/ImagePro.astro';
+
 # Angkor Wat and Siem Reap, Cambodia
+
+<PostImage height="300px">
+  <ImagePro
+    name="DSC_7207-tagged.jpg"
+    widths={[200, 800, 1100]}
+    sizes="(max-width: 1100px) 100vw, 200px"
+  />
+  <ImagePro
+    name="thumbnail.jpg"
+    widths={[450, 800, 1100]}
+    sizes="(max-width: 1100px) 100vw, 450px"
+  />
+  <ImagePro
+    name="thumbnail.jpg"
+    widths={[450, 800, 1100]}
+    sizes="(max-width: 1100px) 100vw, 450px"
+  />
+  <span slot="caption">Yo</span>
+</PostImage>
