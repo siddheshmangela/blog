@@ -1,0 +1,65 @@
+---
+import { Picture } from '@astrojs/image/components';
+
+export interface Props {
+  id: string;
+  url: string;
+  title: string;
+  description: string;
+  pubDate: string;
+}
+
+const { title, id, description, pubDate, url } = Astro.props;
+
+console.log(`../images/${id}/thumbnail.jpg`);
+---
+
+<li class="PostThumb">
+  <a href={url} class="image-link">
+    <Picture
+      src={import(`../images/${id}/thumbnail.jpg`)}
+      widths={[400, 720, 1100]}
+      sizes={'(max-width: 1100px) 100vw, 720px'}
+      alt={id}
+    />
+  </a>
+
+  <h2>{title}</h2>
+  <p>{description} <a href={url}>read more..</a></p>
+  <time datetime={pubDate}>
+    {
+      new Date(pubDate).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+    }
+  </time>
+</li>
+
+<style lang="scss">
+  .PostThumb {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+
+    @media (min-width: 1100px) {
+      max-width: 720px;
+    }
+
+    .image-link {
+      display: block;
+    }
+
+    :global(img) {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    :global(picture) {
+      display: block;
+      line-height: 0;
+    }
+  }
+</style>

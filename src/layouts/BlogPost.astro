@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description },
 } = Astro.props;
 ---
 
@@ -22,27 +22,84 @@ const {
   <head>
     <BaseHead title={title} description={description} />
     <style lang="scss">
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
-      }
-
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-
       main {
         padding: 16px;
         margin: 0 auto;
-        padding-top: 100px;
+        padding-top: 50px;
         font-size: 1.1rem;
         line-height: 32px;
+        flex: 1;
 
         @media (min-width: 1100px) {
-          max-width: 70ch;
+          max-width: 790px;
           padding-left: 0;
           padding-right: 0;
+        }
+
+        :global(h1) {
+          display: block;
+          font-size: 2.2em;
+          margin-top: 0.67em;
+          margin-bottom: 0.67em;
+          margin-left: 0;
+          margin-right: 0;
+          font-weight: bold;
+          line-height: 1.5em;
+        }
+
+        :global(h2) {
+          display: block;
+          font-size: 1.8em;
+          margin-top: 0.83em;
+          margin-bottom: 0.83em;
+          margin-left: 0;
+          margin-right: 0;
+          font-weight: bold;
+          line-height: 1.4em;
+        }
+
+        :global(h3) {
+          display: block;
+          font-size: 1.5em;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          margin-left: 0;
+          margin-right: 0;
+          font-weight: bold;
+          line-height: 1.4em;
+        }
+
+        :global(h4) {
+          display: block;
+          font-size: 1.4em;
+          margin-top: 1.33em;
+          margin-bottom: 1.33em;
+          margin-left: 0;
+          margin-right: 0;
+          font-weight: bold;
+          line-height: 1.4em;
+        }
+
+        :global(h5) {
+          display: block;
+          font-size: 1.2em;
+          margin-top: 1.67em;
+          margin-bottom: 1.67em;
+          margin-left: 0;
+          margin-right: 0;
+          font-weight: bold;
+          line-height: 1.4em;
+        }
+
+        :global(h6) {
+          display: block;
+          font-size: 1.1em;
+          margin-top: 2.33em;
+          margin-bottom: 2.33em;
+          margin-left: 0;
+          margin-right: 0;
+          font-weight: bold;
+          line-height: 32px;
         }
       }
     </style>

@@ -7,6 +7,7 @@ export interface Props {
   sizes?: string;
   class?: string;
   alt?: string;
+  extension?: string;
 }
 
 const url = Astro.url.pathname.replace(/\/$/, '').substring(1);
@@ -14,6 +15,7 @@ const {
   name,
   widths = [400, 800, 1100],
   sizes = '(max-width: 760px) 100vw, 800px',
+  extension = 'jpg',
   ...attrs
 } = Astro.props;
 
@@ -24,7 +26,7 @@ alt = alt ? alt : name;
 
 <div class="ImagePro">
   <Picture
-    src={import(`../images/${url}/${name}.jpg`)}
+    src={import(`../images/${url}/${name}.${extension}`)}
     widths={widths}
     sizes={sizes}
     alt={alt}
