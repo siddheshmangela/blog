@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "dev": "astro dev",
@@ -19,6 +19,7 @@
     "astro-icon": "^0.7.3"
   },
   "devDependencies": {
+    "rollup": "^2.79.0",
     "sass": "^1.54.9"
   }
 }
