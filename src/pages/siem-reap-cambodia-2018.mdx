@@ -7,9 +7,12 @@ pubDate: 'Jul 08 2022'
 ---
 
 import PostImage from '../components/PostImage.astro';
+import PostStamp from '../components/PostStamp.astro';
 import ImagePro from '../components/ImagePro.astro';
 
-# Angkor Wat and Siem Reap, Cambodia
+# {frontmatter.title}
+
+<PostStamp pubDate={frontmatter.pubDate} />
 
 _The Article is about my travels back in 2018_
 
@@ -116,11 +119,11 @@ reflected in the mirror of the ponds. Then it faded the orange hue of Sunrise. A
 
 <PostImage justifyContent="center">
   <ImagePro
-    name="siddhesh-mangela-0bx_FfcNYoc-unsplash"
+    name="wat-preah-prom-rath"
     widths={[538, 800, 1100]}
     sizes="(max-width: 1100px) 100vw, 792px"
   />
-  <span slot="caption">_Sunrise Angkor wat_</span>
+  <span slot="caption">_Preah prom rath Pagoda_</span>
 </PostImage>
 
 In the evening, Noi Cafe treated us with strong bean-brewed coffees. Continuing, we came across a Pagoda.
@@ -135,11 +138,11 @@ We all laughed about it. It was a very peaceful place. I was happy to get away f
 
 <PostImage justifyContent="center">
   <ImagePro
-    name="siddhesh-mangela-0bx_FfcNYoc-unsplash"
+    name="buddhist-monk"
     widths={[538, 800, 1100]}
     sizes="(max-width: 1100px) 100vw, 792px"
   />
-  <span slot="caption">_Sunrise Angkor wat_</span>
+  <span slot="caption">_A Buddhist monk we met_</span>
 </PostImage>
 
 Before dinner, we decided to take an adventurer’s path and munch on fried crickets. I had the first go.
@@ -147,7 +150,7 @@ It tasted like shrimp with added crunch. Add a dash of lime, and it is gourmet. 
 
 <PostImage justifyContent="center">
   <ImagePro
-    name="siddhesh-mangela-0bx_FfcNYoc-unsplash"
+    name="fried-insects"
     widths={[538, 800, 1100]}
     sizes="(max-width: 1100px) 100vw, 792px"
   />
@@ -169,11 +172,11 @@ and together it is said to bring fertility to the water.
 
 <PostImage justifyContent="center">
   <ImagePro
-    name="siddhesh-mangela-0bx_FfcNYoc-unsplash"
+    name="kbal-spean-vishnu"
     widths={[538, 800, 1100]}
     sizes="(max-width: 1100px) 100vw, 792px"
   />
-  <span slot="caption">_Fried insects sold by street vendors_</span>
+  <span slot="caption">_Vishnu resting, River of 1000 Lingas_</span>
 </PostImage>
 
 or dinner, we wanted to try Lebanese food. The owner of Atmosphere Restaurant, an Iraqi fella helped us pick from the menu. We fixed Musakka, a beef dish topped with cheese and Babaganouj. And in the end, had shared a carrot cake.
