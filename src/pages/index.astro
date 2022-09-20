@@ -45,7 +45,7 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
           display: block;
           font-size: 3em;
           margin-top: 0.67em;
-          margin-bottom: 0.67em;
+          margin-bottom: 0.35em;
           margin-left: 0;
           margin-right: 0;
           font-weight: bold;
@@ -53,8 +53,11 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
         }
 
         p {
-          font-size: 1.5rem;
-          text-align: center;
+          &.description {
+            font-size: 1.4em;
+            text-align: center;
+            margin-bottom: 40px;
+          }
         }
       }
     </style>
@@ -64,6 +67,7 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
     <main>
       <section>
         <h1>{SITE_TITLE}</h1>
+        <p class="description">{SITE_DESCRIPTION}</p>
       </section>
       <section>
         <ul>

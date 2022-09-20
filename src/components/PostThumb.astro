@@ -1,5 +1,6 @@
 ---
 import { Picture } from '@astrojs/image/components';
+import PostStamp from './PostStamp.astro';
 
 export interface Props {
   id: string;
@@ -10,8 +11,6 @@ export interface Props {
 }
 
 const { title, id, description, pubDate, url } = Astro.props;
-
-console.log(`../images/${id}/thumbnail.jpg`);
 ---
 
 <li class="PostThumb">
@@ -26,15 +25,7 @@ console.log(`../images/${id}/thumbnail.jpg`);
 
   <h2>{title}</h2>
   <p>{description} <a href={url}>read more..</a></p>
-  <time datetime={pubDate}>
-    {
-      new Date(pubDate).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      })
-    }
-  </time>
+  <PostStamp pubDate={pubDate} />
 </li>
 
 <style lang="scss">
