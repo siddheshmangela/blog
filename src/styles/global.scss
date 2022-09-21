@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2em;
+}
+
 body {
   font-family: 'Merriweather', serif;
   margin: 0;

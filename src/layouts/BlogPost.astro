@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BackToHomeButton from '../components/BackToHomeButton.astro';
 import GoToTopButton from '../components/GoToTopButton.astro';
+import LinksDecorater from '../islands/LinksDecorater/LinksDecorater';
 
 export interface Props {
   content: {
@@ -46,6 +47,21 @@ const {
         .bottom-nav {
           display: flex;
           justify-content: space-between;
+        }
+
+        :global(.heading-link) {
+          display: inline-flex;
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+          align-items: center;
+          justify-content: center;
+          vertical-align: middle;
+
+          @media (min-width: 1100px) {
+            width: 24px;
+            height: 24px;
+          }
         }
 
         :global(h1) {
@@ -112,6 +128,7 @@ const {
           margin-right: 0;
           font-weight: bold;
           line-height: 32px;
+          position: relative;
         }
 
         :global(#frontmattertitle) {
@@ -129,16 +146,16 @@ const {
   <body>
     <Sprite.Provider>
       <Header />
+      <LinksDecorater client:idle />
       <main>
+        <BackToHomeButton />
         <article>
-          <BackToHomeButton />
           <slot />
-
-          <div class="bottom-nav">
-            <BackToHomeButton />
-            <GoToTopButton />
-          </div>
         </article>
+        <div class="bottom-nav">
+          <BackToHomeButton />
+          <GoToTopButton />
+        </div>
       </main>
       <Footer />
     </Sprite.Provider>
