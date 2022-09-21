@@ -1,5 +1,4 @@
 import { createSignal, onMount } from 'solid-js';
-import styles from './ThemeToggle.module.scss';
 
 const DayIcon = () => (
   <svg
@@ -7,7 +6,7 @@ const DayIcon = () => (
     stroke="currentColor"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    class={styles.DayIcon}
+    class="DayIcon"
   >
     <path
       stroke-linecap="round"
@@ -24,7 +23,7 @@ const NightIcon = () => (
     stroke="currentColor"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    class={styles.NightIcon}
+    class="NightIcon"
   >
     <path
       stroke-linecap="round"
@@ -58,7 +57,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={changeTheme} class={styles.ThemeToggle}>
+    <button onClick={changeTheme} class="ThemeToggle">
       <Show when={theme() === 'dark'} fallback={<DayIcon />}>
         <NightIcon />
       </Show>
