@@ -5,7 +5,7 @@ import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://blog.siddheshmangela.com',
+  site: 'https://blog.siddheshmangela.com',
   integrations: [mdx(), sitemap(), image()],
   vite: {
     ssr: {
