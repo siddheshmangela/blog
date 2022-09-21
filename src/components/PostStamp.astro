@@ -7,7 +7,7 @@ const { pubDate } = Astro.props;
 ---
 
 <time datetime={pubDate}>
-  {
+  Posted: {
     new Date(pubDate).toLocaleDateString('en-us', {
       year: 'numeric',
       month: 'short',
@@ -18,5 +18,6 @@ const { pubDate } = Astro.props;
 
 <style lang="scss">
   time {
+    font-style: italic;
   }
 </style>

@@ -1,0 +1,35 @@
+---
+import { Sprite } from 'astro-icon';
+---
+
+<a href={`${Astro.url.href}#`}>
+  <Sprite name="arrow-top" />
+</a>
+
+<style lang="scss">
+  a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: inherit;
+
+    @media (min-width: 1100px) {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+    }
+
+    @media print {
+      display: none;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      color: inherit;
+    }
+  }
+</style>

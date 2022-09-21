@@ -5,11 +5,10 @@
  */
 
 :root {
-  --color-font-main: #222;
-  --color-font-light: #222;
-  --color-font-link: #3273dc;
+  --color-font-main: #622500;
+  --color-font-link: #ee482f;
 
-  --color-bg-main: #fff;
+  --color-bg-main: #fffdf1;
   --color-bg-light: #f2f2f2;
 
   --color-border-light: #999;
@@ -34,6 +33,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @media print {
+    --color-bg-main: #fff;
+    --color-font-main: #222;
+    --color-font-link: #3273dc;
+  }
 }
 
 a {
