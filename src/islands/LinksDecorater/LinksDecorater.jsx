@@ -1,7 +1,7 @@
 import { onMount } from 'solid-js';
 
 const LinksDecorater = () => {
-  onMount(async () => {
+  onMount(() => {
     const main = document.querySelector('main');
     const article = main.querySelector('article');
     const anchors = article.querySelectorAll('a');
