@@ -39,6 +39,14 @@ body {
   display: flex;
   flex-direction: column;
 
+  &[data-theme='dark'] {
+    --color-font-main: #ddcdb1;
+    --color-font-link: #e36856;
+
+    --color-bg-main: #222224;
+    --color-bg-light: #222224;
+  }
+
   @media print {
     --color-bg-main: #fff;
     --color-font-main: #222;

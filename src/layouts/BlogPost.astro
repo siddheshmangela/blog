@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import BackToHomeButton from '../components/BackToHomeButton.astro';
 import GoToTopButton from '../components/GoToTopButton.astro';
 import LinksDecorater from '../islands/LinksDecorater/LinksDecorater';
+import ThemeToggle from '../islands/ThemeToggle/ThemeToggle';
 
 export interface Props {
   content: {
@@ -146,6 +147,7 @@ const {
   <body>
     <Sprite.Provider>
       <Header />
+      <ThemeToggle client:only="solid-js" />
       <LinksDecorater client:idle />
       <main>
         <BackToHomeButton />
