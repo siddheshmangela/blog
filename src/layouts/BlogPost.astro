@@ -4,7 +4,6 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import GoToTopButton from '../components/GoToTopButton.astro';
 import LinksDecorater from '../islands/LinksDecorater/LinksDecorater';
-import ThemeToggle from '../islands/ThemeToggle/ThemeToggle';
 
 export interface Props {
   content: {
@@ -145,7 +144,6 @@ const {
   <body>
     <Sprite.Provider>
       <Header />
-      <ThemeToggle client:only="solid-js" />
       <LinksDecorater client:idle />
       <main>
         <article>

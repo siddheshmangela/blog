@@ -3,7 +3,7 @@ import { Sprite } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import PostThumb from '../components/PostThumb.astro';
-import ThemeToggle from '../islands/ThemeToggle/ThemeToggle';
+import ThemeToggle from '../islands/ThemeToggle.svelte';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 const posts = (await Astro.glob('./*.{md,mdx}'))
@@ -67,7 +67,6 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
   <body>
     <Sprite.Provider>
       <Header />
-      <ThemeToggle client:idle />
       <main>
         <section>
           <h1>{SITE_TITLE}</h1>
