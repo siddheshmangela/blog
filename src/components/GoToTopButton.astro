@@ -10,16 +10,17 @@ import { Sprite } from 'astro-icon';
   a {
     width: 40px;
     height: 40px;
-    display: inline-flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     color: inherit;
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
 
     @media (min-width: 1100px) {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
+      display: inline-flex;
     }
 
     @media print {

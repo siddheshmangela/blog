@@ -2,8 +2,6 @@
 import { Sprite } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BackToHomeButton from '../components/BackToHomeButton.astro';
 import GoToTopButton from '../components/GoToTopButton.astro';
 import LinksDecorater from '../islands/LinksDecorater/LinksDecorater';
 import ThemeToggle from '../islands/ThemeToggle/ThemeToggle';
@@ -31,7 +29,7 @@ const {
         padding: 16px;
         margin: 0 auto;
         padding-top: 70px;
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         line-height: 32px;
         flex: 1;
 
@@ -150,16 +148,13 @@ const {
       <ThemeToggle client:only="solid-js" />
       <LinksDecorater client:idle />
       <main>
-        <BackToHomeButton />
         <article>
           <slot />
         </article>
         <div class="bottom-nav">
-          <BackToHomeButton />
           <GoToTopButton />
         </div>
       </main>
-      <Footer />
     </Sprite.Provider>
   </body>
 </html>

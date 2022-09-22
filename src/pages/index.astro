@@ -2,7 +2,6 @@
 import { Sprite } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import PostThumb from '../components/PostThumb.astro';
 import ThemeToggle from '../islands/ThemeToggle/ThemeToggle';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
@@ -41,6 +40,7 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
         padding-top: 50px;
         flex: 1;
         width: 100%;
+        font-size: 1.05rem;
 
         h1 {
           text-align: center;
@@ -89,7 +89,6 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
           </ul>
         </section>
       </main>
-      <Footer />
     </Sprite.Provider>
   </body>
 </html>
