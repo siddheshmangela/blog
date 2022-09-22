@@ -3,7 +3,7 @@ import { Sprite } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import GoToTopButton from '../components/GoToTopButton.astro';
-import LinksDecorater from '../islands/LinksDecorater/LinksDecorater';
+import LinksDecorater from '../islands/LinksDecorater.svelte';
 
 export interface Props {
   content: {
@@ -143,8 +143,8 @@ const {
 
   <body>
     <Sprite.Provider>
-      <Header />
       <LinksDecorater client:idle />
+      <Header />
       <main>
         <article>
           <slot />

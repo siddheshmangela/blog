@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "type": "module",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": false,
   "scripts": {
     "dev": "astro dev",
@@ -15,15 +15,14 @@
     "@astrojs/mdx": "^0.11.1",
     "@astrojs/rss": "^1.0.1",
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/solid-js": "^1.1.0",
     "@astrojs/svelte": "^1.0.0",
     "astro": "^1.2.4",
     "astro-icon": "^0.7.3",
-    "solid-js": "^1.4.3",
     "svelte": "^3.46.4"
   },
   "devDependencies": {
     "rollup": "^2.79.0",
-    "sass": "^1.54.9"
+    "sass": "^1.54.9",
+    "typescript": "^4.8.3"
   }
 }

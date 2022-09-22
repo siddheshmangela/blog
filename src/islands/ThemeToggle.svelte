@@ -33,7 +33,7 @@
   };
 </script>
 
-<button on:click={onThemeChange}>
+<button on:click={onThemeChange} title="Toggle theme">
   {#if theme === Theme.dark}
     <svg
       fill="none"
