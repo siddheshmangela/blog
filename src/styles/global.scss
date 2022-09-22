@@ -5,6 +5,7 @@
  */
 
 :root {
+  color-scheme: light;
   --color-font-main: #622500;
   --color-font-link: #ee482f;
 
@@ -23,6 +24,17 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 2em;
+
+  &.theme {
+    &--dark {
+      color-scheme: dark;
+      --color-font-main: #ddcdb1;
+      --color-font-link: #e36856;
+
+      --color-bg-main: #222224;
+      --color-bg-light: #222224;
+    }
+  }
 }
 
 body {
@@ -38,14 +50,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  &[data-theme='dark'] {
-    --color-font-main: #ddcdb1;
-    --color-font-link: #e36856;
-
-    --color-bg-main: #222224;
-    --color-bg-light: #222224;
-  }
 
   @media print {
     --color-bg-main: #fff;
@@ -86,44 +90,3 @@ blockquote {
   margin: 0px;
   font-style: italic;
 }
-
-// .ThemeToggle {
-//   position: absolute;
-//   top: 16px;
-//   right: 16px;
-//   width: 40px;
-//   height: 40px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   z-index: 1000;
-//   border: none;
-//   outline: none;
-//   padding: 0;
-//   margin: 0;
-//   background-color: transparent;
-//   color: inherit;
-//   cursor: pointer;
-
-//   @media (min-width: 1100px) {
-//     position: fixed;
-//     top: 32px;
-//     right: 32px;
-//     width: 48px;
-//     height: 48px;
-//   }
-
-//   @media print {
-//     display: none;
-//   }
-// }
-
-// .DayIcon {
-//   width: 32px;
-//   height: 32px;
-// }
-
-// .NightIcon {
-//   width: 28px;
-//   height: 28px;
-// }

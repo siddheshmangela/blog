@@ -10,11 +10,17 @@
     localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light';
 
   onMount(() => {
-    const body = document.querySelector('body');
+    const html = document.querySelector('html');
     const initialTheme = getInitialTheme();
 
-    if (body && initialTheme) {
-      body.dataset.theme = initialTheme;
+    if (html && initialTheme) {
+      if (initialTheme === Theme.dark) {
+        html.classList.remove('theme--light');
+        html.classList.add('theme--dark');
+      } else {
+        html.classList.remove('theme--dark');
+        html.classList.add('theme--light');
+      }
     }
   });
 
@@ -25,10 +31,16 @@
     theme = newTheme;
     localStorage.setItem('theme', newTheme);
 
-    const body = document.querySelector('body');
+    const html = document.querySelector('html');
 
-    if (body) {
-      body.dataset.theme = newTheme;
+    if (html) {
+      if (newTheme === Theme.dark) {
+        html.classList.remove('theme--light');
+        html.classList.add('theme--dark');
+      } else {
+        html.classList.remove('theme--dark');
+        html.classList.add('theme--light');
+      }
     }
   };
 </script>
