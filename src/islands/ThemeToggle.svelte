@@ -89,7 +89,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 200;
     border: none;
     outline: none;
     padding: 0;
@@ -117,7 +117,7 @@
   }
 
   .NightIcon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 </style>
