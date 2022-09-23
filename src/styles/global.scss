@@ -1,8 +1,4 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import 'fonts';
 
 :root {
   color-scheme: light;
@@ -13,6 +9,7 @@
   --color-bg-light: #f2f2f2;
 
   --color-border-light: #999;
+  --logo-filter: sepia(3) brightness(0.88);
 
   --image-height: auto;
 }
@@ -32,12 +29,13 @@ html {
 
       --color-bg-main: #222224;
       --color-bg-light: #222224;
+      --logo-filter: sepia(3) brightness(0.74);
     }
   }
 }
 
 body {
-  font-family: 'Merriweather', serif;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--color-bg-main);
@@ -45,7 +43,7 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   color: var(--color-font-main);
-  font-size: 1rem;
+  font-size: 1.25rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -97,6 +95,7 @@ blockquote {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
+  color: inherit;
 
   @media (min-width: 1100px) {
     width: 24px;
