@@ -1,9 +1,9 @@
 ---
 import { Sprite } from 'astro-icon';
+import { Spa } from 'astro-spa';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import PostThumb from '../components/PostThumb.astro';
-import ThemeToggle from '../islands/ThemeToggle.svelte';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 const posts = (await Astro.glob('./*.{md,mdx}'))
@@ -93,5 +93,6 @@ const posts = (await Astro.glob('./*.{md,mdx}'))
         </section>
       </main>
     </Sprite.Provider>
+    <Spa progressBar={false} />
   </body>
 </html>
