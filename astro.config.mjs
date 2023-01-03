@@ -13,7 +13,6 @@ export default defineConfig({
     mdx({
       remarkPlugins: [headingAutoLinkRemarkPlugin, linkOpenInNewTabRemarkPlugin],
     }),
-    ,
     sitemap(),
     image(),
     svelte(),
